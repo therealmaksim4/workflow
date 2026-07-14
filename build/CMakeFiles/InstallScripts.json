@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/maksim/workflow/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

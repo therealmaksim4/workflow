@@ -1,0 +1,7 @@
+/home/maksim/workflow/build/CMakeFiles/workflow.dir
+/home/maksim/workflow/build/CMakeFiles/edit_cache.dir
+/home/maksim/workflow/build/CMakeFiles/rebuild_cache.dir
+/home/maksim/workflow/build/CMakeFiles/list_install_components.dir
+/home/maksim/workflow/build/CMakeFiles/install.dir
+/home/maksim/workflow/build/CMakeFiles/install/local.dir
+/home/maksim/workflow/build/CMakeFiles/install/strip.dir
