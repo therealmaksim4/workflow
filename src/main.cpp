@@ -13,6 +13,10 @@ int main(){
             system("bash ~/workflow/src/cheatsheets/cheatsheets.sh");
         }
 
+        else if(cmd == "man"){
+            system("bash ~/workflow/src/manpages/manpages.sh");
+        }
+
         else if(cmd == "clear"){
             system("clear");
         }

@@ -46,6 +46,8 @@ There are a few commands as of version 0.0.1:
 
 `cheat` - Find cheatsheets for what you need
 
+`man` - Man pages for what you need
+
 `clear` - Clear the screen
 
 `exit` - Exit workflow
