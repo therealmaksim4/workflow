@@ -2,9 +2,10 @@
 
 clear
 
-languages=`echo "c cpp python" | tr ' ' '\n'`
+read -p "Language: " language
 
-selected=`printf "$languages" | fzf`
+clear
+
 read -p "Query: " query
 
-curl cht.sh/$selected/`echo $query | tr ' ' '+'`
+curl cht.sh/$language/`echo $query | tr ' ' '+'`
