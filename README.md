@@ -42,11 +42,13 @@ You should be done! Type `workflow` into the terminal and it should be over!
 
 ## How to use
 
-There are a few commands as of version 0.0.1:
+There are a few commands as of version 0.0.11:
 
 `cheat` - Find cheatsheets for what you need
 
 `man` - Man pages for what you need
+
+`bash` - Run one line of bash
 
 `clear` - Clear the screen
 
