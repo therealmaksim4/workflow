@@ -4,8 +4,8 @@ printf "Making the .config directory... "
 
 cd
 
-mkdir ~/.config/workflow
-mkdir ~/.config/src
+mkdir ~/.config/workflow > /dev/null 2>&1
+mkdir ~/.config/src > /dev/null 2>&1
 
 echo "Done!"
 printf "Copying the source code into the .config directory... "
