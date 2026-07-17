@@ -30,8 +30,6 @@ Run the install script:
 
 `bash install.sh`
 
-After running the install script we instantly delete the repo
-
 ## How to use
 
 There are a few commands as of version 0.0.111:
