@@ -21,6 +21,6 @@ cd ~/workflow
 
 cmake -S . -B build > /dev/null 2>&1
 cmake --build build > /dev/null 2>&1
-sudo cmake --install build /dev/null 2>&1
+sudo cmake --install build > /dev/null 2>&1
 
 echo "Done!"
