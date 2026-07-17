@@ -19,8 +19,8 @@ printf "Building and installing the files... "
 
 cd ~/workflow
 
-cmake -S . -B build
-cmake --build build
-sudo cmake --install build
+cmake -S . -B build > /dev/null 2>&1
+cmake --build build > /dev/null 2>&1
+sudo cmake --install build /dev/null 2>&1
 
 echo "Done!"
