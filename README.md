@@ -44,6 +44,8 @@ There are a few commands as of version 0.0.111:
 
 `exit` - Exit workflow
 
+You can also execute multiple commands in one line by doing `cheat bash clear` which would opwn up cheatsheets execute a bash command and clear the terminal.
+
 ## Configuration
 
 You can edit the source code directly after installing (You only can't edit the main.cpp file but you don't even need to do it).
