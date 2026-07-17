@@ -1,4 +1,4 @@
-# workflow
+# workflow 0.0.111
 
 Enhance your workflow.
 
@@ -16,7 +16,7 @@ Debian:
 #
 ### How to install
 
-Make sure to install the dependencies before installing this repository!
+Make sure to install the dependencies before installing this repository and do **NOT** be in any other directory other than your home directory!
 
 Clone the repository:
 
@@ -26,23 +26,15 @@ Enter the repository:
 
 `cd workflow`
 
-Set up the CMake:
+Run the install script:
 
-`cmake -S . -B build/`
+`bash install.sh`
 
-Build the files:
-
-`cmake --build build/`
-
-Install the files (this won't work without sudo):
-
-`sudo cmake --install build/`
-
-You should be done! Type `workflow` into the terminal and it should be over!
+After running the install script we instantly delete the repo
 
 ## How to use
 
-There are a few commands as of version 0.0.11:
+There are a few commands as of version 0.0.111:
 
 `cheat` - Find cheatsheets for what you need
 
@@ -53,3 +45,7 @@ There are a few commands as of version 0.0.11:
 `clear` - Clear the screen
 
 `exit` - Exit workflow
+
+## Configuration
+
+You can edit the source code directly after installing (You only can't edit the main.cpp file but you don't even need to do it).

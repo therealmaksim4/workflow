@@ -10,15 +10,15 @@ int main(){
         std::cin >> cmd;
 
         if(cmd == "cheat"){
-            system("bash ~/workflow/src/cheatsheets/cheatsheets.sh");
+            system("bash ~/.config/workflow/src/cheatsheets/cheatsheets.sh");
         }
 
         else if(cmd == "man"){
-            system("bash ~/workflow/src/manpages/manpages.sh");
+            system("bash ~/.config/workflow/src/manpages/manpages.sh");
         }
 
         else if(cmd == "bash"){
-            system("bash ~/workflow/src/bash/bash.sh");
+            system("bash ~/.config/workflow/src/bash/bash.sh");
         }
 
         else if(cmd == "clear"){

@@ -225,11 +225,11 @@ workflow: /usr/lib/Scrt1.o \
   /usr/lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/16/libatomic.a \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/16/libatomic.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libatomic_asneeded.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc_s.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.a \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.so \
   /usr/lib/ld-linux-x86-64.so.2 \
   /usr/lib/libc.so.6 \
   /usr/lib/libc_nonshared.a \
@@ -247,6 +247,8 @@ CMakeFiles/workflow.dir/src/main.cpp.o:
 /usr/lib/libc_nonshared.a:
 
 /usr/lib/ld-linux-x86-64.so.2:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/libatomic.so:
 
 /usr/lib/libm.so:
 
@@ -335,6 +337,8 @@ CMakeFiles/workflow.dir/src/main.cpp.o:
 /usr/include/c++/16/tuple:
 
 /usr/include/c++/16/compare:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.so:
 
 /usr/include/c++/16/clocale:
 
@@ -484,8 +488,6 @@ CMakeFiles/workflow.dir/src/main.cpp.o:
 
 /usr/include/bits/endianness.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/libatomic.a:
-
 /usr/include/bits/struct_mutex.h:
 
 /usr/include/c++/16/cstdlib:
@@ -595,8 +597,6 @@ CMakeFiles/workflow.dir/src/main.cpp.o:
 /usr/include/c++/16/ios:
 
 /usr/include/c++/16/bits/basic_string.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.a:
 
 /usr/include/c++/16/bits/postypes.h:
 
