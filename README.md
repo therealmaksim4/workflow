@@ -44,7 +44,7 @@ There are a few commands as of version 0.0.111:
 
 `exit` - Exit workflow
 
-You can also execute multiple commands in one line by doing `cheat bash clear` which would opwn up cheatsheets execute a bash command and clear the terminal.
+You can also execute multiple commands in one line by doing `cheat bash clear` which would open up cheatsheets, execute a bash command and clear the terminal.
 
 ## Configuration
 
