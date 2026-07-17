@@ -17,12 +17,20 @@ int main(){
             system("bash ~/workflow/src/manpages/manpages.sh");
         }
 
+        else if(cmd == "bash"){
+            system("bash ~/workflow/src/bash/bash.sh");
+        }
+
         else if(cmd == "clear"){
             system("clear");
         }
 
         else if(cmd == "exit"){
             running = false;
+        }
+
+        else{
+            std::cout << "Invalid command." << std::endl;
         }
     }
 
