@@ -13,7 +13,7 @@ Arch:
 Debian:
 
 `sudo apt install cmake git`
-#
+
 ### How to install
 
 Make sure to install the dependencies before installing this repository and do **NOT** be in any other directory other than your home directory!
