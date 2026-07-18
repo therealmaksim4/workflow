@@ -1,4 +1,4 @@
-# Maintainer: therealmaksim4
+# Maintainer: therealmaksim4 <maksim.budim11052013@gmail.com>
 pkgname="workflow"
 pkgver=0.0.1121
 pkgrel=1
