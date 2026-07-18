@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(workflow VERSION 0.0.111 DESCRIPTION "Manage your workflow")
+project(workflow VERSION 0.0.112 DESCRIPTION "Manage your workflow")
 
 set(CMAKE_CXX_STANDARD_REQUIRED 11)
 
