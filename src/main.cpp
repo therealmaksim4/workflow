@@ -7,6 +7,7 @@ int main(){
     std::string cmd;
 
     while(running){
+        std::cout << ">>> ";
         std::cin >> cmd;
 
         if(cmd == "cheat"){
