@@ -8,7 +8,7 @@ mkdir ~/.config/workflow > /dev/null 2>&1
 mkdir ~/.config/src > /dev/null 2>&1
 
 echo "Done!"
-printf "Removing past source config files"
+printf "Removing past source config files... "
 
 rm -rf ~/.config/workflow/src/
 
