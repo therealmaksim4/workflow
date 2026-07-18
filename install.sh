@@ -10,7 +10,7 @@ mkdir ~/.config/src > /dev/null 2>&1
 echo "Done!"
 printf "Removing past source config files"
 
-rm -rf ~/.config/workflow/src/
+rm -rf ~/.config/workflow/src/ > /dev/null 2>&1
 
 echo "Done!"
 printf "Copying the source code into the config directory... "
