@@ -1,4 +1,4 @@
-# workflow 0.0.112
+# workflow 0.0.1121
 
 Enhance your workflow.
 
@@ -32,7 +32,7 @@ Run the install script:
 
 ## How to use
 
-There are a few commands as of version 0.0.112:
+There are a few commands as of version 0.0.1121:
 
 `cheat` - Find cheatsheets for what you need
 
@@ -48,4 +48,4 @@ You can also execute multiple commands in one line by doing `cheat bash clear` w
 
 ## Configuration
 
-You can edit the source code directly after installing (You only can't edit the main.cpp file but you don't even need to do it).
+You can edit the source code directly after installing (You only can't edit the main.cpp file but you don't even need to do it). Make sure to back up your source config files as we delete past source config files!
