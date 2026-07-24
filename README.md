@@ -1,4 +1,4 @@
-# workflow 0.0.1121
+# workflow v0.0.2
 
 Enhance your workflow.
 
@@ -32,7 +32,7 @@ Run the install script:
 
 ## How to use
 
-There are a few commands as of version 0.0.1121:
+There are a few commands as of version 0.0.2:
 
 `cheat` - Find cheatsheets for what you need
 
