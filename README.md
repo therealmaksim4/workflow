@@ -4,23 +4,25 @@ Enhance your workflow.
 
 ## Installation
 
-### Dependencies
-
 Arch:
-
-`sudo pacman -S cmake git`
-
-Debian:
-
-`sudo apt install cmake git`
-
-### How to install
-
-Make sure to install the dependencies before installing this repository and do **NOT** be in any other directory other than your home directory!
 
 Clone the repository:
 
-`git clone therealmaksim4/workflow`
+`git clone https://github.com/therealmaksim4/workflow`
+
+Enter the repository:
+
+`cd workflow`
+
+Make the package using makepkg:
+
+`makepkg -si`
+
+Other distros:
+
+Clone the repository:
+
+`git clone https://github.com/therealmaksim4/workflow`
 
 Enter the repository:
 
