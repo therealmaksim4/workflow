@@ -1,4 +1,4 @@
-# workflow v0.1.1
+# workflow v0.1.2
 
 Enhance your coding.
 
@@ -41,6 +41,8 @@ There are a few commands as of the latest version:
 `man` - Man pages for what you need
 
 `bash` - Run one line of bash
+
+`edit` - Edit a file using a specified editor
 
 `clear` - Clear the screen
 
