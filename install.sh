@@ -4,7 +4,7 @@ printf "Making the config directory... "
 
 cd
 
-mkdir ~/.config/workflow > /dev/null 2>&1
+mkdir -p ~/.config/workflow > /dev/null 2>&1
 
 echo "Done!"
 printf "Removing past config files... "
