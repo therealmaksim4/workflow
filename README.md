@@ -1,6 +1,6 @@
-# workflow v0.1.0
+# workflow v0.1.1
 
-Enhance your workflow.
+Enhance your coding.
 
 ## Installation
 

@@ -1,7 +1,7 @@
 # Maintainer: therealmaksim4 <maksim.budim11052013@gmail.com>
 pkgname="workflow"
-pkgver=0.1.0
-pkgrel=3
+pkgver=0.1.1
+pkgrel=4
 pkgdesc="Enhance your coding"
 arch=("x86_64")
 url="https://github.com/therealmaksim4/workflow"
