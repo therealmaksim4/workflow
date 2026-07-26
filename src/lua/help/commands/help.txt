@@ -1,0 +1,3 @@
+Name: help
+Added in: v0.1.3
+Description: Get the details of a command

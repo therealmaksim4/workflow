@@ -1,0 +1,3 @@
+Name: cheat
+Added in: v0.0.1
+Description: Find cheatsheets for what you need

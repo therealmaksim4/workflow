@@ -17,12 +17,16 @@ int main(int argc, char *argv[]){
             system("lua ~/.config/workflow/lua/man.lua");
         }
 
-        else if(cmd == "bash"){
-            system("lua ~/.config/workflow/lua/bash.lua");
-        }
-
         else if(cmd == "edit"){
             system("lua ~/.config/workflow/lua/edit.lua");
+        }
+
+        else if(cmd == "make"){
+            system("lua ~/.config/workflow/lua/make.lua");
+        }
+
+        else if(cmd == "help"){
+            system("lua ~/.config/workflow/lua/help/help.lua");
         }
 
         else if(cmd == "clear"){
@@ -30,7 +34,7 @@ int main(int argc, char *argv[]){
         }
 
         else if(cmd == "exit"){
-            system("clear")
+            system("clear");
             running = false;
         }
 

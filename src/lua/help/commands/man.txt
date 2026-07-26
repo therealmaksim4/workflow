@@ -1,0 +1,3 @@
+Name: man
+Added in: v0.0.1
+Description: Man pages for what you need
