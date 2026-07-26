@@ -1,4 +1,4 @@
-# workflow v0.0.2
+# workflow v0.1.0
 
 Enhance your workflow.
 
@@ -34,7 +34,7 @@ Run the install script:
 
 ## How to use
 
-There are a few commands as of version 0.0.2:
+There are a few commands as of the latest version:
 
 `cheat` - Find cheatsheets for what you need
 
@@ -51,3 +51,7 @@ You can also execute multiple commands in one line by doing `cheat bash clear` w
 ## Configuration
 
 You can edit the source code directly after installing (You only can't edit the main.cpp file but you don't even need to do it). Make sure to back up your source config files as we delete past source config files!
+
+## What's new?
+
+We switched from bash to lua for simplicity and ease of configuration! Lua is much simpler, it's better for writing small reusable scripts and it's really fast.
