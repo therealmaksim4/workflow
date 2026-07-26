@@ -21,16 +21,21 @@ int main(int argc, char *argv[]){
             system("lua ~/.config/workflow/lua/bash.lua");
         }
 
+        else if(cmd == "edit"){
+            system("lua ~/.config/workflow/lua/edit.lua");
+        }
+
         else if(cmd == "clear"){
             system("clear");
         }
 
         else if(cmd == "exit"){
+            system("clear")
             running = false;
         }
 
         else{
-            std::cout << "Invalid command." << std::endl;
+            std::cout << "Invalid command" << std::endl;
         }
     }
 
