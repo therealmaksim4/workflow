@@ -5,19 +5,16 @@ printf "Making the config directory... "
 cd
 
 mkdir ~/.config/workflow > /dev/null 2>&1
-mkdir ~/.config/src > /dev/null 2>&1
 
 echo "Done!"
-printf "Removing past source config files... "
+printf "Removing past config files... "
 
-rm -rf ~/.config/workflow/src/ > /dev/null 2>&1
+rm -rf ~/.config/workflow/lua > /dev/null 2>&1
 
 echo "Done!"
-printf "Copying the source code into the config directory... "
+printf "Copying the lua source code into the config directory... "
 
-cp -r ~/workflow/src .config/workflow/src
-
-rm -rf ~/.config/workflow/src/main.cpp
+cp -r ~/workflow/src/lua ~/.config/workflow/lua
 
 echo "Done!"
 printf "Building and installing the files... "

@@ -12,13 +12,13 @@ int main(int argc, char *argv[]){
     }
 
     else if(argc == 2 && argv[1] == "cheat"){
-        system("bash ~/.config/workflow/src/cheatsheets/cheatsheets.sh");
+        system("lua ~/.config/workflow/lua/cheat.lua");
 
         return 0;
     }
 
     else if(argc == 2 && argv[1] == "man"){
-        system("bash ~/.config/workflow/src/manpages/manpages.sh");
+        system("lua ~/.config/workflow/lua/man.lua");
 
         return 0;
     }
@@ -28,37 +28,39 @@ int main(int argc, char *argv[]){
 
         return 1;
     }
+    
+    else if(argc == 1){
+        system("clear");
 
-    system("clear");
+        bool running = true;
+        std::string cmd;
 
-    bool running = true;
-    std::string cmd;
+        while(running){
+            std::cin >> cmd;
 
-    while(running){
-        std::cin >> cmd;
+            if(cmd == "cheat"){
+                system("lua ~/.config/workflow/lua/cheat.lua");
+            }
 
-        if(cmd == "cheat"){
-            system("bash ~/.config/workflow/src/cheatsheets/cheatsheets.sh");
-        }
+            else if(cmd == "man"){
+                system("lua ~/.config/workflow/lua/man.lua");
+            }
 
-        else if(cmd == "man"){
-            system("bash ~/.config/workflow/src/manpages/manpages.sh");
-        }
+            else if(cmd == "bash"){
+                system("lua ~/.config/workflow/lua/bash.lua");
+            }
 
-        else if(cmd == "bash"){
-            system("bash ~/.config/workflow/src/bash/bash.sh");
-        }
+            else if(cmd == "clear"){
+                system("clear");
+            }
 
-        else if(cmd == "clear"){
-            system("clear");
-        }
+            else if(cmd == "exit"){
+                running = false;
+            }
 
-        else if(cmd == "exit"){
-            running = false;
-        }
-
-        else{
-            std::cout << "Invalid command." << std::endl;
+            else{
+                std::cout << "Invalid command." << std::endl;
+            }
         }
     }
 
