@@ -13,12 +13,14 @@ elseif command == "edit" then
     os.execute("cat ~/.config/workflow/lua/help/commands/edit.txt")
 elseif command == "make" then
     os.execute("cat ~/.config/workflow/lua/help/commands/make.txt")
+elseif command == "command" then
+    os.execute("cat ~/.config/workflow/lua/help/commands/command.txt")
 elseif command == "clear" then
     os.execute("cat ~/.config/workflow/lua/help/commands/clear.txt")
 elseif command == "exit" then
     os.execute("cat ~/.config/workflow/lua/help/commands/exit.txt")
 elseif command == "" then
-    print("cheat\nman\nedit\nmake\nhelp\nclear\nexit")
+    print("cheat\nman\nedit\nmake\nhelp\ncommand\nclear\nexit")
 else
     print("No valid command given")
 end

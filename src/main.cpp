@@ -29,6 +29,10 @@ int main(int argc, char *argv[]){
             system("lua ~/.config/workflow/lua/help/help.lua");
         }
 
+        else if(cmd == "command"){
+            system("lua ~/.config/workflow/lua/command.lua");
+        }
+
         else if(cmd == "clear"){
             system("clear");
         }
