@@ -1,4 +1,4 @@
-# workflow v0.1.4
+# workflow v0.1.5
 
 Enhance your coding.
 
@@ -51,3 +51,5 @@ We switched from bash to lua for simplicity and ease of configuration! Lua is mu
 Removed bash command.
 
 Added an edit, make, help and command command.
+
+Changed from using the standard lua interpreter to using LuaJIT.

@@ -1,12 +1,12 @@
 # Maintainer: therealmaksim4 <maksim.budim11052013@gmail.com>
 pkgname="workflow"
-pkgver=0.1.4
-pkgrel=7
+pkgver=0.1.5
+pkgrel=8
 pkgdesc="Enhance your coding"
 arch=("x86_64")
 url="https://github.com/therealmaksim4/workflow"
 license=("GPL")
-depends=("lua")
+depends=("luajit")
 makedepends=("git" "cmake>=3.16")
 source=("workflow::https://github.com/therealmaksim4/workflow.git")
 md5sums=("SKIP")
