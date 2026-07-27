@@ -1,7 +1,7 @@
 # Maintainer: therealmaksim4 <maksim.budim11052013@gmail.com>
 pkgname="workflow"
 pkgver=0.1.3
-pkgrel=6
+pkgrel=7
 pkgdesc="Enhance your coding"
 arch=("x86_64")
 url="https://github.com/therealmaksim4/workflow"
@@ -10,6 +10,14 @@ depends=("lua")
 makedepends=("git" "cmake>=3.16")
 source=("workflow::https://github.com/therealmaksim4/workflow.git")
 md5sums=("SKIP")
+
+prepare() {
+    cd ..
+
+    mkdir -p ~/.config/workflow
+    rm -rf ~/.config/workflow/lua
+    cp -r ~/workflow/src/lua
+}
 
 build() {
     cd ..
