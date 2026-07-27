@@ -1,6 +1,6 @@
 # Maintainer: therealmaksim4 <maksim.budim11052013@gmail.com>
 pkgname="workflow"
-pkgver=0.1.3
+pkgver=0.1.4
 pkgrel=7
 pkgdesc="Enhance your coding"
 arch=("x86_64")

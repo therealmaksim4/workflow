@@ -1,4 +1,4 @@
-# workflow v0.1.3
+# workflow v0.1.4
 
 Enhance your coding.
 
@@ -34,25 +34,11 @@ Run the install script:
 
 ## How to use
 
-There are a few commands as of the latest version:
+Start up workflow by typing `workflow` into the terminal.
 
-`cheat`
+To see all of the commands type `help` and leave the command space empty
 
-`man`
-
-`edit`
-
-`make`
-
-`help`
-
-`clear`
-
-`exit`
-
-You can also execute multiple commands in one line by typing the name of the command followed by a space.
-
-If you ask for a command to be added it will probably get added when we see the request!
+You can execute multiple commands in one line by typing the name of the command followed by a space. If you ask for a command to be added it will probably get added when we see the request!
 
 ## Configuration
 
@@ -64,4 +50,4 @@ We switched from bash to lua for simplicity and ease of configuration! Lua is mu
 
 Removed bash command.
 
-Added an edit, make and help command.
+Added an edit, make, help and command command.
