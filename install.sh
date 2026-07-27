@@ -21,6 +21,9 @@ printf "Building and installing the files... "
 
 cd ~/workflow
 
+rm -rf build
+mkdir build
+
 cmake -S . -B build > /dev/null 2>&1
 cmake --build build > /dev/null 2>&1
 sudo cmake --install build > /dev/null 2>&1
