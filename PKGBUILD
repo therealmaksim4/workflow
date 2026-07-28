@@ -12,7 +12,7 @@ source=("workflow::https://github.com/therealmaksim4/workflow.git")
 md5sums=("SKIP")
 
 prepare() {
-    cd ..
+    cd ~/workflow
 
     mkdir -p ~/.config/workflow
     rm -rf ~/.config/workflow/lua
@@ -23,14 +23,14 @@ prepare() {
 }
 
 build() {
-    cd ..
+    cd ~/workflow
 
     cmake -S . -B build
     cmake --build build
 }
 
 package() {
-    cd ..
+    cd ~/workflow
 
     sudo cmake --install build
 }
