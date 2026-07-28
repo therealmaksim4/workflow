@@ -9,7 +9,7 @@ mkdir -p ~/.config/workflow 1>/dev/null
 echo "Done!"
 printf "Removing past config files... "
 
-rm -rf ~/.config/workflow/lua > /dev/null 2>&1
+rm -rf ~/.config/workflow/lua 1>/dev/null
 
 echo "Done!"
 printf "Copying the lua source code into the config directory... "
@@ -24,8 +24,8 @@ cd ~/workflow
 rm -rf build
 mkdir build
 
-cmake -S . -B build > /dev/null 2>&1
-cmake --build build > /dev/null 2>&1
-sudo cmake --install build > /dev/null 2>&1
+cmake -S . -B build 1>/dev/null
+cmake --build build 1>/dev/null
+sudo cmake --install build 1>/dev/null
 
 echo "Done!"
