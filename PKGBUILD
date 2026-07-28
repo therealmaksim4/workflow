@@ -16,7 +16,7 @@ prepare() {
 
     mkdir -p ~/.config/workflow
     rm -rf ~/.config/workflow/lua
-    cp -r ~/workflow/src/lua
+    cp -r ~/workflow/src/lua ~/.config/workflow/lua
 
     rm -rf build
     mkdir build
