@@ -4,22 +4,6 @@ Enhance your coding.
 
 ## Installation
 
-Arch:
-
-Clone the repository:
-
-`git clone https://github.com/therealmaksim4/workflow`
-
-Enter the repository:
-
-`cd workflow`
-
-Make the package using makepkg:
-
-`makepkg -si`
-
-Other distros:
-
 Clone the repository:
 
 `git clone https://github.com/therealmaksim4/workflow`
