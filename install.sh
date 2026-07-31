@@ -18,9 +18,10 @@ echo "Building and installing the files... "
 
 cd ~/workflow
 
+mkdir build
+
 cmake -S . -B build 1>/dev/null
 cmake --build build 1>/dev/null
 sudo cmake --install build 1>/dev/null
 
 rm -rf build
-mkdir build
