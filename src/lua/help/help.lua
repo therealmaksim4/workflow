@@ -20,7 +20,7 @@ elseif command == "clear" then
 elseif command == "exit" then
     os.execute("cat ~/.config/workflow/lua/help/commands/exit.txt")
 elseif command == "" then
-    print("cheat\nman\nedit\nmake\nhelp\ncommand\nclear\nexit")
+    print("cheat\nman\nedit\nmake\nhelp\ncommand\nlang\nclear\nexit")
 else
     print("Invalid command given")
 end
