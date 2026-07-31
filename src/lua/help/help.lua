@@ -22,7 +22,7 @@ elseif command == "exit" then
 elseif command == "" then
     print("cheat\nman\nedit\nmake\nhelp\ncommand\nclear\nexit")
 else
-    print("No valid command given")
+    print("Invalid command given")
 end
 
 print("-- help --")

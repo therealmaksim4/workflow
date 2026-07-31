@@ -33,6 +33,10 @@ int main(int argc, char *argv[]){
             system("luajit ~/.config/workflow/lua/command.lua");
         }
 
+        else if(cmd == "lang"){
+            system("luajit ~/.config/workflow/lua/lang/lang.lua");
+        }
+
         else if(cmd == "clear"){
             system("clear");
         }

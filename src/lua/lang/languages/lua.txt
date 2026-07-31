@@ -1,0 +1,3 @@
+Name: Lua
+Description: Lua is a powerful, efficient, lightweight, embeddable scripting language, it supports several programming styles: procedural, object-oriented, functional, data-driven, and data description
+Interpreters/Compilers: lua, luajit
