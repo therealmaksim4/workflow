@@ -27,13 +27,3 @@ You can execute multiple commands in one line by typing the name of the command 
 ## Configuration
 
 You can edit the source code directly after installing (You only can't edit the main.cpp file but you don't even need to do it). Make sure to back up your source config files as we delete past source config files!
-
-## What's new
-
-We switched from bash to lua for simplicity and ease of configuration! Lua is much simpler, it's better for writing small reusable scripts and it's really fast.
-
-Removed bash command.
-
-Added an edit, make, help and command command.
-
-Changed from using the standard lua interpreter to using LuaJIT.
