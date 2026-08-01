@@ -1,3 +1,0 @@
-Name: lang
-Added in: v0.1.7
-Description: Get help with programming languages

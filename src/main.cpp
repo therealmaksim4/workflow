@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
         }
 
         else if(cmd == "help"){
-            system("luajit ~/.config/workflow/lua/help/help.lua");
+            system("luajit ~/.config/workflow/lua/help.lua");
         }
 
         else if(cmd == "command"){

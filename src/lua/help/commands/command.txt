@@ -1,3 +1,0 @@
-Name: command
-Added in: v0.1.4
-Description: Execute a shell command

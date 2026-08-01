@@ -1,3 +1,0 @@
-Name: clear
-Added in: v0.0.1
-Description: Clear the screen

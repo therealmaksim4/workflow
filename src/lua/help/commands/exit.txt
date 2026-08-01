@@ -1,3 +1,0 @@
-Name: exit
-Added in: v0.0.1
-Description: Exit workflow
