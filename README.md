@@ -6,29 +6,41 @@ Enhance your coding.
 
 Clone the repository:
 
-`git clone https://github.com/therealmaksim4/workflow`
+```bash
+git clone https://github.com/therealmaksim4/workflow
+```
 
 Enter the repository:
 
-`cd workflow`
+```bash
+cd workflow
+```
 
 Run the [install script](install.sh):
 
-`bash install.sh`
+```bash
+bash install.sh
+```
 
 ## Updating
 
 Enter the repository:
 
-`cd workflow`
+```bash
+cd workflow
+```
 
 Update the repository:
 
-`git pull`
+```bash
+git pull
+```
 
 Run the [install script](install.sh):
 
-`bash install.sh`
+```bash
+bash install.sh
+```
 
 ## How to use
 
