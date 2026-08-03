@@ -12,7 +12,21 @@ Enter the repository:
 
 `cd workflow`
 
-Run the install script:
+Run the [install script](install.sh):
+
+`bash install.sh`
+
+## Updating
+
+Enter the repository:
+
+`cd workflow`
+
+Update the repository:
+
+`git pull`
+
+Run the [install script](install.sh):
 
 `bash install.sh`
 
@@ -25,4 +39,4 @@ You can execute multiple commands in one line by typing the name of the command 
 
 ## Configuration
 
-You can edit the source code directly after installing (You only can't edit the main.cpp file but you don't even need to do it). Make sure to back up your source config files as we delete past source config files!
+There is a config.lua file that is made after installing. Make sure that file is up to date with all of the new options otherwise it won't work. For reference look at the [example_config.lua file](example_config.lua) to see all of the options. If this is your first time installing the config.lua is made from the [example_config.lua file](example_configlua).

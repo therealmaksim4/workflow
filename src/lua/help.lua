@@ -1,4 +1,10 @@
-print("-- help --")
+dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
+
+on_command_start()
+
+if global.show_command_name == true then
+    print("-- help --")
+end
 
 commands = {
     help = "List every command and it's function",
@@ -7,13 +13,14 @@ commands = {
     command = "Run a shell command",
     edit = "Edit a file",
     make = "Create a file",
-    lang = "Info about a programming language",
 }
 
-print("workflow v0.1.7\n")
+print("workflow v0.2.0\n")
 
 for key, value in pairs(commands) do
-    print(key .. " - " .. value)
+    print(key .. " " .. help.seperator .. " " .. value)
 end
 
-print("-- help --")
+if global.show_command_name == true then
+    print("-- help --")
+end
