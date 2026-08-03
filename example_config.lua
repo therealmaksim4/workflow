@@ -3,7 +3,7 @@ global = {
 }
 
 cheat = {
-    type_full_url = false, -- If true "URL: (language/query or util~query)". Which means you get more freedom.
+    type_full_url = false, -- If true "URL: (language/query or util~query)". Enabling this means you get more freedom.
 }
 
 help = {
