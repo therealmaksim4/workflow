@@ -2,6 +2,8 @@
 
 workflow is a program that helps you with coding. You can open cheat sheets, open manual pages and more. This program is in an early state and everything might change.
 
+![](workflow-demo.mp4)
+
 Thanks for checking out this repo!
 
 ## Installation
