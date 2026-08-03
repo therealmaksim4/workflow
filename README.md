@@ -32,10 +32,7 @@ Run the [install script](install.sh):
 
 ## How to use
 
-Start up workflow by typing `workflow` into the terminal.
-To see all of the commands type `help`.
-
-You can execute multiple commands in one line by typing the name of the command followed by a space. If you ask for a command to be added it will probably get added when we see the request!
+Start up workflow by typing `workflow` into the terminal. To see all of the commands type `help`. You can execute multiple commands in one line by typing the name of the command followed by a space. If you ask for a command to be added it will probably get added when we see the request!
 
 ## Configuration
 
