@@ -1,6 +1,6 @@
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
 
-on_command_start()
+global.on_command_start()
 
 if global.show_command_name == true then
     print("-- make --")
@@ -14,3 +14,5 @@ os.execute("touch " .. filename)
 if global.show_command_name == true then
     print("-- make --")
 end
+
+global.on_command_end()
