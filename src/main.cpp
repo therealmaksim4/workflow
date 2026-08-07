@@ -10,27 +10,27 @@ int main(int argc, char *argv[]){
         std::cin >> cmd;
 
         if(cmd == "cheat"){
-            system("luajit ~/.config/workflow/lua/cheat.lua");
+            system("luajit /usr/src/workflow/src/lua/cheat.lua");
         }
 
         else if(cmd == "man"){
-            system("luajit ~/.config/workflow/lua/man.lua");
+            system("luajit /usr/src/workflow/src/lua/man.lua");
         }
 
         else if(cmd == "edit"){
-            system("luajit ~/.config/workflow/lua/edit.lua");
+            system("luajit /usr/src/workflow/src/lua/edit.lua");
         }
 
         else if(cmd == "make"){
-            system("luajit ~/.config/workflow/lua/make.lua");
+            system("luajit /usr/src/workflow/src/lua/make.lua");
         }
 
         else if(cmd == "help"){
-            system("luajit ~/.config/workflow/lua/help.lua");
+            system("luajit /usr/src/workflow/src/lua/help.lua");
         }
 
         else if(cmd == "command"){
-            system("luajit ~/.config/workflow/lua/command.lua");
+            system("luajit /usr/src/workflow/src/lua/command.lua");
         }
 
         else if(cmd == "clear"){

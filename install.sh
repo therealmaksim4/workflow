@@ -1,29 +1,73 @@
 #!/bin/bash
 
-echo "Making the config directory..."
+errors=0
+warnings=0
+
+read -p "Would you like to automatically install dependencies (gcc luajit man)[y/n] " dependencies
+
+if [[ $dependencies == "y" ]]; then
+    echo -e "\e[0;34m#\e[0;0m Installing dependencies:"
+
+    if command -v apt > /dev/null 2>&1; then
+        sudo apt install gcc luajit man
+    elif command -v dnf > /dev/null 2>&1; then
+        sudo dnf install gcc luajit man
+    elif command -v yum > /dev/null 2>&1; then
+        sudo yum install gcc luajit man
+    elif command -v zypper > /dev/null 2>&1; then
+        sudo zypper install gcc luajit man
+    elif command -v pacman > /dev/null 2>&1; then
+        sudo pacman -S gcc luajit man-db
+    elif command -v apk > /dev/null 2>&1; then
+        sudo apk add gcc luajit man-pages
+    elif command -v xbps-install > /dev/null 2>&1; then
+        sudo xbps-install gcc luajit man-pages
+    else
+        echo "\e[0;31mError: Package manager not found, dependencies will need to be manually installed\e[0;0m"
+
+        ((errors++))
+    fi
+elif [[ $dependencies == "n" ]]; then
+    echo -e "\e[0;33mWarning: Dependencies will need to be installed manually\e[0;0m"
+
+    ((warnings++))
+else
+    echo -e "\e[0;33mWarning: Invalid answear given, dependencies will need to be manually installed\e[0;0m"
+
+    ((warnings++))
+fi
+
+echo -e "\e[0;34m#\e[0;0m Making the config directory:"
 
 cd
 
-mkdir -p ~/.config/workflow > /dev/null 2>&1
+if [ -e ~/.config/workflow ]; then
+    echo -e "\e[0;33mWarning: Directory already exists\e[0;0m"
 
-echo "Removing past config files..."
+    ((warnings++))
+else
+    echo "  mkdir -p ~/.config/workflow"
 
-rm -rf ~/.config/workflow/lua > /dev/null 2>&1
+    mkdir -p ~/.config/workflow > /dev/null 2>&1
+fi
 
-echo "Copying the lua source code into the config directory..."
-
-cp -r ~/workflow/src/lua ~/.config/workflow/lua
-
-echo "Making config.lua..."
+echo -e "\e[0;34m#\e[0;0m Making config.lua:"
 
 if [ -e ~/.config/workflow/config.lua ]; then
-    echo -e "\e[0;31mFile already exists!\e[0;0m"
+    echo -e "\e[0;33mWarning: File already exists\e[0;0m"
+
+    ((warnings++))
 else
+    echo "  cp -r ~/workflow/example_config.lua ~/.config/workflow/config.lua"
+
     cp -r ~/workflow/example_config.lua ~/.config/workflow/config.lua
 fi
 
-echo "Building and installing the files..."
+echo -e "\e[0;34m#\e[0;0m Building and installing the files:"
 
 cd ~/workflow
 
-make 1>/dev/null
+make | sed 's/^/  /'
+
+echo -e "\n\e[0;31mNumber of errors: $errors\e[0;0m"
+echo -e "\e[0;33mNumber of warnings: $warnings\e[0;0m"
