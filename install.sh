@@ -3,6 +3,8 @@
 errors=0
 warnings=0
 
+sudo printf ""
+
 read -p "Would you like to automatically install dependencies (gcc luajit man)[y/n] " dependencies
 
 if [[ $dependencies == "y" ]]; then
@@ -63,7 +65,7 @@ else
     cp -r ~/workflow/example_config.lua ~/.config/workflow/config.lua
 fi
 
-echo -e "\e[0;34m#\e[0;0m Building and installing the files:"
+echo -e "\e[0;34m#\e[0;0m Compiling and installing the files:"
 
 cd ~/workflow
 

@@ -13,11 +13,24 @@ commands = {
     command = "Run a shell command",
     edit = "Edit a file",
     make = "Create a file",
+    clear = "Clear the screen",
 }
 
-print("workflow v0.2.0\n")
+mini_commands = {
+    q = "Exit workflow",
+    c = "Edit the config.lua file",
+    rc = "Reset your config to default settings",
+}
+
+print("workflow v0.2.0\nNormal Commands:\n")
 
 for key, value in pairs(commands) do
+    print(key .. " " .. help.seperator .. " " .. value)
+end
+
+print("\nMini Commands:\n")
+
+for key, value in pairs(mini_commands) do
     print(key .. " " .. help.seperator .. " " .. value)
 end
 
