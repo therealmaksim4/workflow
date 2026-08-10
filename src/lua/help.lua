@@ -19,6 +19,7 @@ mini_commands = {
     q = "Exit workflow",
     c = "Edit the config.lua file",
     rc = "Reset your config to default settings",
+    p = "Execute previous command",
 }
 
 print("workflow v0.2.0\nNormal Commands:\n")
