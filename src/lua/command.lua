@@ -1,26 +1,18 @@
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
+dofile("/usr/src/workflow/src/lua/special/check_command_name_color.lua")
 
 global.on_command_start()
 
-if global.show_command_name == true then
-    print("-- command --")
-end
+check_command_name_color("command")
 
 io.write("Command: ")
 command = io.read()
 
-if command.show_command_name == true then
-    print("-- " .. command .. " --")
-end
+check_command_name_color(command)
 
 os.execute(command)
 
-if command.show_command_name == true then
-    print("-- " .. command .. " --")
-end
-
-if global.show_command_name == true then
-    print("-- command --")
-end
+check_command_name_color(command)
+check_command_name_color("command")
 
 global.on_command_end()

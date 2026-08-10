@@ -57,7 +57,7 @@ int main(int argc, char *argv[]){
         }
 
         else{
-            std::cerr << "Command not found: " << cmd << std::endl;
+            std::cerr << "\033[31m" << cmd << ": command not found" << "\033[0m" << std::endl;
         }
     }
 

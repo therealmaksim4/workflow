@@ -1,10 +1,9 @@
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
+dofile("/usr/src/workflow/src/lua/special/check_command_name_color.lua")
 
 global.on_command_start()
 
-if global.show_command_name == true then
-    print("-- help --")
-end
+check_command_name_color("help")
 
 commands = {
     help = "List every command and it's function",
@@ -34,8 +33,6 @@ for key, value in pairs(mini_commands) do
     print(key .. " " .. help.seperator .. " " .. value)
 end
 
-if global.show_command_name == true then
-    print("-- help --")
-end
+check_command_name_color("help")
 
 global.on_command_end()

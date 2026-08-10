@@ -1,5 +1,10 @@
 global = {
     show_command_name = true, -- Shows the name of the command being ran
+
+    colors = {
+        use_colors = true,
+        main_color = "yellow", -- All colors available are: red, green, yellow, blue, magenta, cyan, black and white.
+    },
 }
 
 function global.on_command_start() -- When running a command this function will be ran at the start

@@ -5,7 +5,7 @@ warnings=0
 
 sudo printf ""
 
-read -p "Would you like to automatically install dependencies (gcc luajit man)[y/n] " dependencies
+read -p "Would you like to automatically install dependencies? (gcc, luajit, man) [y/n] " dependencies
 
 if [[ $dependencies == "y" ]]; then
     echo -e "\e[0;34m#\e[0;0m Installing dependencies:"

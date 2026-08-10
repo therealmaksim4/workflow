@@ -1,10 +1,9 @@
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
+dofile("/usr/src/workflow/src/lua/special/check_command_name_color.lua")
 
 global.on_command_start()
 
-if global.show_command_name == true then
-    print("-- cheat --")
-end
+check_command_name_color("cheat")
 
 if cheat.type_full_url == true then
     io.write("URL: ")
@@ -21,8 +20,6 @@ elseif cheat.type_full_url == false then
     os.execute("curl cht.sh/" .. language .. "/" .. query)
 end
 
-if global.show_command_name == true then
-    print("-- cheat --")
-end
+check_command_name_color("cheat")
 
 global.on_command_end()

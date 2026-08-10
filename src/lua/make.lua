@@ -1,18 +1,15 @@
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
+dofile("/usr/src/workflow/src/lua/special/check_command_name_color.lua")
 
 global.on_command_start()
 
-if global.show_command_name == true then
-    print("-- make --")
-end
+check_command_name_color("make")
 
 io.write("Filepath: ")
 filename = io.read()
 
 os.execute("touch " .. filename)
 
-if global.show_command_name == true then
-    print("-- make --")
-end
+check_command_name_color("make")
 
 global.on_command_end()
