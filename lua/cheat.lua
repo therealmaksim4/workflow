@@ -1,5 +1,5 @@
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
-dofile("/usr/src/workflow/src/lua/special/check_command_name_color.lua")
+dofile("/usr/src/workflow/lua/special/check_command_name_color.lua")
 
 global.on_command_start()
 

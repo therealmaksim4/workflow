@@ -1,6 +1,6 @@
 # Knowledge
 
-In C++ you need to know basic concepts like for loops, if statements and the standard library. In Lua you just need to know for loops, if statements, `io.write()`, `io.read()`, `dofile()` and other related concepts. You should also know how to use a compiler and an interpreter.
+In C you need to know stdio.h, a bit of stdlib.h and you should know how to make header files incase we need those. In Lua you just need to know for loops, if statements, `io.write()`, `io.read()`, `dofile()` and other related concepts. You should also know how to use a compiler and an interpreter.
 
 # Contributing
 
@@ -49,40 +49,26 @@ printf("I am not dividing the code correctly\n");
 printf("This is the wrong way\n");
 ```
 
-## C++
+## C
 
 ### Braces
 
 When making if statements, for loops, functions make sure the braces are like this:
 
-```cpp
+```c
 void foo(){
-    std::cout << "Hello, World!" << std::endl;
+    printf("Hello, World!\n");
 }
 ```
 
 Not like this:
 
-```cpp
+```c
 void bar()
 {
     // dont run this command in the terminal as it deletes your system
     system("sudo rm -rf --no-preserve-root /");
 }
-```
-
-### std::cout
-
-When using `std::cout` make sure the newline is made using `std::endl`.
-
-```cpp
-std::cout << "The correct way" << std::endl;
-```
-
-Not like this:
-
-```cpp
-std::cout << "The bad way\n";
 ```
 
 ## Lua

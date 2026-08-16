@@ -1,6 +1,6 @@
 # workflow
 
-workflow is a program that helps you with coding. You can open cheat sheets, open manual pages and more. This program is in an early state and everything might change.
+workflow is a cli tool that helps you with coding. This program is in an early state and everything might change.
 
 Thanks for checking out this repo!
 

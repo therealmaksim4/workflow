@@ -22,14 +22,3 @@ cheat = {
 help = {
     seperator = "-", -- What seperates the command and the description
 }
-
-command = {
-    show_command_name = true, -- Shows the name of the shell command being ran
-}
-
-edit = {
-    editor = {
-        default_editor = "nano",
-        use_default_editor = false, -- If false the edit command will ask you to give it an editor, otherwise it will use the default editor above
-    },
-}

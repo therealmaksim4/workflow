@@ -5,25 +5,25 @@ warnings=0
 
 sudo printf ""
 
-read -p "Would you like to automatically install dependencies? (gcc, luajit, man) [y/n] " dependencies
+read -p "Would you like to automatically install dependencies? (gcc, luajit) [y/n] " dependencies
 
 if [[ $dependencies == "y" ]]; then
     echo -e "\e[0;34m#\e[0;0m Installing dependencies:"
 
     if command -v apt > /dev/null 2>&1; then
-        sudo apt install gcc luajit man
+        sudo apt install gcc luajit
     elif command -v dnf > /dev/null 2>&1; then
-        sudo dnf install gcc luajit man
+        sudo dnf install gcc luajit
     elif command -v yum > /dev/null 2>&1; then
-        sudo yum install gcc luajit man
+        sudo yum install gcc luajit
     elif command -v zypper > /dev/null 2>&1; then
-        sudo zypper install gcc luajit man
+        sudo zypper install gcc luajit
     elif command -v pacman > /dev/null 2>&1; then
-        sudo pacman -S gcc luajit man-db
+        sudo pacman -S gcc luajit
     elif command -v apk > /dev/null 2>&1; then
-        sudo apk add gcc luajit man-pages
+        sudo apk add gcc luajit
     elif command -v xbps-install > /dev/null 2>&1; then
-        sudo xbps-install gcc luajit man-pages
+        sudo xbps-install gcc luajit
     else
         echo "\e[0;31mError: Package manager not found, dependencies will need to be manually installed\e[0;0m"
 
