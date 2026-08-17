@@ -53,6 +53,18 @@ else
     mkdir -p ~/.config/workflow > /dev/null 2>&1
 fi
 
+echo -e "\e[0;34m#\e[0;0m Making the lua directory:"
+
+if [ -e ~/.config/workflow/lua ]; then
+    echo -e "\e[0;33mWarning: Directory already exists\e[0;0m"
+
+    ((warnings++))
+else
+    echo "  mkdir -p ~/.config/workflow/lua"
+
+    mkdir -p ~/.config/workflow/lua > /dev/null 2>&1
+fi
+
 echo -e "\e[0;34m#\e[0;0m Making config.lua:"
 
 if [ -e ~/.config/workflow/config.lua ]; then

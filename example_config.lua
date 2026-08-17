@@ -14,11 +14,3 @@ end
 function global.on_command_end() -- When running a command this function will be ran at the end
     -- Empty
 end
-
-cheat = {
-    type_full_url = false, -- If true "URL: (language/query or util~query)". Enabling this means you get more freedom.
-}
-
-help = {
-    seperator = "-", -- What seperates the command and the description
-}
