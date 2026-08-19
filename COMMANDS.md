@@ -6,7 +6,7 @@ When writing your commands you need to `dofile()` this file:
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
 ```
 
-After those two you need to put `global.on_command_start()` after the `dofile()` and `global.on_command_end()` at the end of your file. This will show the name of the command if the config file has that setting on. You should also try to make your own settings if you are going to distribute your command. in workflow/lua there a lua files you can `dofile()` that help you by giving you functions that simplify the process of making a command.
+After that `dofile()` you need to put `global.on_command_start()` and `global.on_command_end()` at the end of your file. You should also try to make your own settings if you are going to distribute your command. In `/usr/src/workflow/lua` there are lua files you can `dofile()` that help you by giving you functions that simplify the process of making a command.
 
 Here is a simple example of a command:
 
