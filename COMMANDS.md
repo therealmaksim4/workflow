@@ -1,15 +1,14 @@
 # How to write your own commands
 
-When writing your commands you need to `dofile()` these two files:
+When writing your commands you need to `dofile()` this file:
 
 ```lua
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
-dofile("/usr/src/workflow/lua/check_command_name_color.lua")
 ```
 
-After those two you need to put `global.on_command_start()` after the `dofile()` and `global.on_command_end()` at the end of your file. After `global.on_command_start()` type `check_command_name_color("command_name")`. This will show the name of the command if the config file has that setting on. You should also try to make your own settings if you are going to distribute your command.
+After those two you need to put `global.on_command_start()` after the `dofile()` and `global.on_command_end()` at the end of your file. This will show the name of the command if the config file has that setting on. You should also try to make your own settings if you are going to distribute your command. in workflow/lua there a lua files you can `dofile()` that help you by giving you functions that simplify the process of making a command.
 
-Here is a simple examle of a command:
+Here is a simple example of a command:
 
 ```lua
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
