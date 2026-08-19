@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[]){
     if(argc == 1){
@@ -15,7 +17,13 @@ int main(int argc, char *argv[]){
         return 1;
     }
 
-    execlp("luajit", "luajit", "/usr/src/workflow/lua/commands.lua", argv[1], NULL);
+    char filepath[1024];
+    strcat(filepath, getenv("HOME"));
+    strcat(filepath, "/.config/workflow/lua/");
+    strcat(filepath, argv[1]);
+    strcat(filepath, ".lua");
+
+    execlp("luajit", "luajit", filepath, NULL);
 
     return 0;
 }
