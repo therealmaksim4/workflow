@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
+#include <sys/wait.h>
 
 int main(int argc, char *argv[]){
     if(argc == 1){
@@ -23,7 +24,15 @@ int main(int argc, char *argv[]){
     strcat(filepath, argv[1]);
     strcat(filepath, ".lua");
 
-    execlp("luajit", "luajit", filepath, NULL);
+    pid_t pid = fork();
+
+    if(pid == 0){
+        execlp("luajit", "luajit", filepath, NULL);
+    }
+
+    int status;
+
+    waitpid(pid, &status, 0);
 
     return 0;
 }
