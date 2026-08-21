@@ -77,8 +77,6 @@ else
     cp -r ~/workflow/example_config.lua ~/.config/workflow/config.lua
 fi
 
-touch ~/.config/workflow/.prev.txt
-
 echo -e "\e[0;34m#\e[0;0m Compiling and installing the files:"
 
 cd ~/workflow
