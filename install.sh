@@ -5,21 +5,21 @@ warnings=0
 
 sudo printf ""
 
-read -p "Would you like to automatically install dependencies? (gcc, luajit) [y/n] " dependencies
+read -p "Would you like to automatically install dependencies? (gcc, luajit, ruby (ruby might need to be installed manually on some systems)) [y/n] " dependencies
 
 if [[ $dependencies == "y" ]]; then
     echo -e "\e[0;34m#\e[0;0m Installing dependencies:"
 
     if command -v apt > /dev/null 2>&1; then
-        sudo apt install gcc luajit
+        sudo apt install gcc luajit ruby-full
     elif command -v dnf > /dev/null 2>&1; then
         sudo dnf install gcc luajit
     elif command -v yum > /dev/null 2>&1; then
-        sudo yum install gcc luajit
+        sudo yum install gcc luajit ruby
     elif command -v zypper > /dev/null 2>&1; then
         sudo zypper install gcc luajit
     elif command -v pacman > /dev/null 2>&1; then
-        sudo pacman -S gcc luajit
+        sudo pacman -S gcc luajit ruby
     elif command -v apk > /dev/null 2>&1; then
         sudo apk add gcc luajit
     elif command -v xbps-install > /dev/null 2>&1; then
