@@ -1,6 +1,6 @@
 # Knowledge
 
-In C you need to know stdio.h, a bit of stdlib.h and you should know how to make header files incase we need those. In Lua you just need to know for loops, if statements, `io.write()`, `io.read()`, `dofile()` and other related concepts. You should also know how to use a compiler and an interpreter.
+In C you need to know stdio.h, a bit of stdlib.h and you should know how to make header files incase we need those. In Lua you just need to know for loops, if statements, `io.write()`, `io.read()`, `dofile()` and other related concepts. You don't really need to know ruby as it is not going to be used that much. You should also know how to use a compiler and an interpreter.
 
 # Contributing
 
@@ -14,7 +14,7 @@ This section is on the style of the code you should be writing. If you do someth
 
 ### Tabs
 
-Tabs should be 4 spaces nothing more nothing less.
+Tabs should be 4 spaces nothing more nothing less, unless we are in Ruby.
 
 ```c
 if(tab.spaces == 4){

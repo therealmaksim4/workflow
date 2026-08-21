@@ -6,10 +6,10 @@
 
 int main(int argc, char *argv[]){
     if(argc == 1){
-        printf("workflow is a CLI tool that helps you build scripts that will enhance your coding\n");
         printf("Put your scripts in ~/.config/workflow/lua and the next time you run workflow type \"workflow your_command\"\n");
+        printf("To see all commands type \"workflow help\"\n");
 
-        return 1;
+        return 0;
     }
 
     else if(argc != 2){
@@ -22,12 +22,18 @@ int main(int argc, char *argv[]){
     strcat(filepath, getenv("HOME"));
     strcat(filepath, "/.config/workflow/lua/");
     strcat(filepath, argv[1]);
-    strcat(filepath, ".lua");
+    strcat(filepath, "/main.lua");
 
     pid_t pid = fork();
 
     if(pid == 0){
-        execlp("luajit", "luajit", filepath, NULL);
+        if(strcmp(argv[1], "help") == 0){
+            execlp("ruby", "ruby", "/usr/src/workflow/ruby/help.rb", NULL);
+        }
+
+        else{
+            execlp("luajit", "luajit", "-O3", filepath, NULL);
+        }
     }
 
     int status;
