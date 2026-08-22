@@ -37,3 +37,20 @@ check_command_name_color("cheat")
 
 global.on_command_end()
 ```
+
+You can also go into the terminal and type "workflow generate command_name" to generate a script like this:
+
+```lua
+dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
+dofile("/usr/src/workflow/lua/check_command_name_color.lua")
+
+global.on_command_start()
+
+check_command_name_color("#command_name")
+
+-- Your code goes here
+
+check_command_name_color("command_name")
+
+global.on_command_end()
+```

@@ -12,12 +12,6 @@ int main(int argc, char *argv[]){
         return 0;
     }
 
-    else if(argc != 2){
-        fprintf(stderr, "workflow: only 1 argument is allowed\n");
-
-        return 1;
-    }
-
     char filepath[1024];
     strcat(filepath, getenv("HOME"));
     strcat(filepath, "/.config/workflow/lua/");
@@ -28,11 +22,33 @@ int main(int argc, char *argv[]){
 
     if(pid == 0){
         if(strcmp(argv[1], "help") == 0){
-            execlp("ruby", "ruby", "/usr/src/workflow/ruby/help.rb", NULL);
+            if(argc != 2){
+                fprintf(stderr, "workflow: too much arguments given\n");
+            }
+
+            else{
+                execlp("ruby", "ruby", "/usr/src/workflow/ruby/help.rb", NULL);
+            }
+        }
+
+        else if(strcmp(argv[1], "generate") == 0){
+            if(argc != 3){
+                fprintf(stderr, "workflow: 3 arguments must be given when running generate.rb\n");
+            }
+
+            else{
+                execlp("ruby", "ruby", "/usr/src/workflow/ruby/generate.rb", argv[2], NULL);
+            }
         }
 
         else{
-            execlp("luajit", "luajit", "-O3", filepath, NULL);
+            if(argc != 2){
+                fprintf(stderr, "workflow: too much arguments given\n");
+            }
+
+            else{
+                execlp("luajit", "luajit", "-O3", filepath, NULL);
+            }
         }
     }
 

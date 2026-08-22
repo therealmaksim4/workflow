@@ -2,10 +2,6 @@
 
 In C you need to know stdio.h, a bit of stdlib.h and you should know how to make header files incase we need those. In Lua you just need to know for loops, if statements, `io.write()`, `io.read()`, `dofile()` and other related concepts. You don't really need to know ruby as it is not going to be used that much. You should also know how to use a compiler and an interpreter.
 
-# Contributing
-
-You can begin contributing by writing a new command that is useful. Be unique, but don't make commands that no one will ever use. Don't vibecode as AI ruins your creativity. You should also use workflow while contributing to see if it's a good tool and to see what can be improved. The source code is organised well so it's easy to start contributing.
-
 # Style
 
 This section is on the style of the code you should be writing. If you do something wrong you shouldn't worry.
@@ -75,7 +71,7 @@ void bar()
 
 ### print VS io.write()
 
-Only use io.write when wanting to take input from the user.
+Only use `io.write` when wanting to take input from the user.
 
 ```lua
 io.write("Do you like pizza? ")
@@ -87,4 +83,22 @@ Not in normal output.
 ```lua
 io.write("Hello, World!\n")
 io.write("This is the wrong way\n")
+```
+
+## Ruby
+
+### print
+
+Always use `print` for stdout and nothing else.
+
+```ruby
+print("Hello, World!\n")
+```
+
+### puts
+
+Use `$stderr.puts` for errors in the code.
+
+```ruby
+$stderr.puts("Error: i dont have a good error example")
 ```
