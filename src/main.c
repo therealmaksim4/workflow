@@ -41,6 +41,16 @@ int main(int argc, char *argv[]){
             }
         }
 
+        else if(strcmp(argv[1], "config") == 0){
+            if(argc != 3){
+                fprintf(stderr, "workflow: 3 arguments must be given when running generate.rb\n");
+            }
+
+            else{
+                execlp("ruby", "ruby", "/usr/src/workflow/ruby/edit_config.rb", argv[2], NULL);
+            }
+        }
+
         else{
             if(argc != 2){
                 fprintf(stderr, "workflow: too much arguments given\n");
