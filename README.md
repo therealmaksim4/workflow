@@ -1,6 +1,6 @@
 # workflow
 
-workflow is a cli tool that helps you with coding. This program is in an early state and everything might change.
+workflow is a CLI tool that helps you with coding. All you need to do is make a `main.lua` file and put it in `~/.config/workflow/lua/your_command/main.lua` and you can run it by typing `workflow your_command`. Ths little program gives some Lua functions that make your job very easy. There is also a config file that can be used by every script. If you want to make a command read [the guide to making commands](COMMANDS.md). This program is in an early state and everything might change (it already did 2 times).
 
 Thanks for checking out this repo!
 
