@@ -95,10 +95,10 @@ Always use `print` for stdout and nothing else.
 print("Hello, World!\n")
 ```
 
-### puts
+### stderr
 
-Use `$stderr.puts` for errors in the code.
+Use `$stderr.print` for errors in the code.
 
 ```ruby
-$stderr.puts("Error: i dont have a good error example")
+$stderr.print("Error: i dont have a good error example\n")
 ```

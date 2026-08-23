@@ -6,13 +6,13 @@ When writing your commands you need to `dofile()` this file:
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
 ```
 
-After that `dofile()` you need to put `global.on_command_start()` and `global.on_command_end()` at the end of your file. You should also try to make your own settings if you are going to distribute your command. In `/usr/src/workflow/lua` there are lua files you can `dofile()` that help you by giving you functions that simplify the process of making a command.
+After that `dofile()` you need to put `global.on_command_start()` and `global.on_command_end()` at the end of your file. You should also try to make your own settings if you are going to distribute your command. In `/usr/src/workflow/bin` there are `.luac` files you can `dofile()` that help you by giving you functions that simplify the process of making a command.
 
 Here is a simple example of a command:
 
 ```lua
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
-dofile("/usr/src/workflow/lua/check_command_name_color.lua")
+dofile("/usr/src/workflow/bin/check_command_name_color.luac")
 
 global.on_command_start()
 
@@ -42,11 +42,11 @@ You can also go into the terminal and type "workflow generate command_name" to g
 
 ```lua
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
-dofile("/usr/src/workflow/lua/check_command_name_color.lua")
+dofile("/usr/src/workflow/bin/check_command_name_color.luac")
 
 global.on_command_start()
 
-check_command_name_color("#command_name")
+check_command_name_color("command_name")
 
 -- Your code goes here
 

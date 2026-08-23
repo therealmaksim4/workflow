@@ -8,7 +8,7 @@
         -- This runs the script
 
     2:
-        run_ruby("~/.config/workflow/my_command/script.rb", "c")
+        output = run_ruby("~/.config/workflow/my_command/script.rb", "c")
 
         -- This returns the output of the script
 ]]

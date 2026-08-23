@@ -57,7 +57,7 @@ int main(int argc, char *argv[]){
             }
 
             else{
-                execlp("luajit", "luajit", "-O3", filepath, NULL);
+                execlp("lua", "lua", filepath, NULL);
             }
         }
     }
