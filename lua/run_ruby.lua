@@ -1,16 +1,16 @@
 --[[
-    Usage:
-    Let's pretend script.rb prints "Hello, World!"
+Usage:
+Let's pretend script.rb prints "Hello, World!"
 
-    1:
-        run_ruby("~/.config/workflow/my_command/script.rb", "r")
+1:
+run_ruby("~/.config/workflow/my_command/script.rb", "r")
 
-        -- This runs the script
+-- This runs the script
 
-    2:
-        output = run_ruby("~/.config/workflow/my_command/script.rb", "c")
+2:
+output = run_ruby("~/.config/workflow/my_command/script.rb", "c")
 
-        -- This returns the output of the script
+-- This returns the output of the script
 ]]
 function run_ruby(filepath, option)
     if option == "r" then
