@@ -9,12 +9,12 @@ int main(int argc, char *argv[]){
         printf("Put your scripts in ~/.config/workflow/lua and the next time you run workflow type \"workflow your_command\"\n");
         printf("To see all commands type \"workflow help\"\n");
 
-        return 0;
+        goto exit;
     }
 
     char *command = argv[1];
 
-    char filepath[1024];
+    char filepath[1024] = "";
     strcat(filepath, getenv("HOME"));
     strcat(filepath, "/.config/workflow/lua/");
     strcat(filepath, argv[1]);

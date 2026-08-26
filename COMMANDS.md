@@ -6,6 +6,15 @@ When writing your commands you need to `dofile()` this file:
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
 ```
 
+If you want to use all features then write:
+
+```lua
+dofile("/usr/src/workflow/bin/all.luac")
+```
+
+> **_Note_**:
+> It's better to `dofile()` `all.luac` because you will be able to use every feature that workflow has to offer, but if you want control over what goes into your code then `dofile()` the files you need.
+
 After that `dofile()` you need to put `global.on_command_start()` and `global.on_command_end()` at the end of your file. You should also try to make your own settings if you are going to distribute your command. In `/usr/src/workflow/bin` there are `.luac` files you can `dofile()` that help you by giving you functions that simplify the process of making a command.
 
 Here is a simple example of a command:
