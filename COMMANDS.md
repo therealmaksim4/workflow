@@ -20,8 +20,7 @@ After that `dofile()` you need to put `global.on_command_start()` and `global.on
 Here is a simple example of a command:
 
 ```lua
-dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
-dofile("/usr/src/workflow/bin/check_command_name_color.luac")
+dofile("/usr/src/workflow/bin/all.luac")
 
 global.on_command_start()
 
@@ -50,8 +49,7 @@ global.on_command_end()
 You can also go into the terminal and type "workflow generate command_name" to generate a script like this:
 
 ```lua
-dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
-dofile("/usr/src/workflow/bin/check_command_name_color.luac")
+dofile("/usr/src/workflow/bin/all.luac")
 
 global.on_command_start()
 
