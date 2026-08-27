@@ -9,6 +9,7 @@ typedef enum{
     SUCCESS = 0,
     ERROR_ARGS = 1,
     ERROR_LUA = 2,
+    ERROR_RUBY = 3,
 }Status;
 
 int main(int argc, char *argv[]){
@@ -19,12 +20,13 @@ int main(int argc, char *argv[]){
         return SUCCESS;
     }
 
-    char *command = argv[1];
+    char command[1024];
+    strcpy(command, argv[1]);
 
     char filepath[1024] = "";
     strcat(filepath, getenv("HOME"));
     strcat(filepath, "/.config/workflow/lua/");
-    strcat(filepath, argv[1]);
+    strcat(filepath, command);
     strcat(filepath, "/main.lua");
 
     struct stat buffer;
@@ -48,7 +50,13 @@ int main(int argc, char *argv[]){
     return SUCCESS;
 
 lua:
-    if(argc != 2){
+    if(system("lua -v > /dev/null 2>&1") != 0){
+        fprintf(stderr, "workflow: lua interpreter is not installed\n");
+
+        return ERROR_LUA;
+    }
+
+    else if(argc != 2){
         fprintf(stderr, "workflow: too much arguments given\n");
 
         return ERROR_ARGS;
@@ -65,7 +73,13 @@ lua:
     }
 
 generate:
-    if(argc != 3){
+    if(system("ruby -v > /dev/null 2>&1") != 0){
+        fprintf(stderr, "workflow: ruby interpreter not installed\n");
+
+        return ERROR_RUBY;
+    }
+
+    else if(argc != 3){
         fprintf(stderr, "workflow: 3 arguments must be given when running generate.rb\n");
 
         return ERROR_ARGS;
@@ -76,7 +90,13 @@ generate:
     }
 
 edit_config:
-    if(argc != 2){
+    if(system("ruby -v > /dev/null 2>&1") != 0){
+        fprintf(stderr, "workflow: ruby interpreter not installed\n");
+
+        return ERROR_RUBY;
+    }
+
+    else if(argc != 2){
         fprintf(stderr, "workflow: 3 arguments must be given when running edit_config.rb\n");
 
         return ERROR_ARGS;
@@ -87,7 +107,13 @@ edit_config:
     }
 
 help:
-    if(argc != 2){
+    if(system("ruby -v > /dev/null 2>&1") != 0){
+        fprintf(stderr, "workflow: ruby interpreter not installed\n");
+
+        return ERROR_RUBY;
+    }
+
+    else if(argc != 2){
         fprintf(stderr, "workflow: too much arguments given\n");
 
         return ERROR_ARGS;
