@@ -1,5 +1,15 @@
 dofile(os.getenv("HOME") .. "/.config/workflow/config.lua")
 
+--[[
+Usage:
+
+check_command_name_color("example_command")
+
+Output:
+-- example_command --
+
+-- Output is based on the config of the user running this
+]]
 function check_command_name_color(command_name)
     if global.show_command_name == true then
         if global.colors.use_colors == false then

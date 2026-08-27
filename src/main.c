@@ -4,13 +4,8 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
-
-typedef enum{
-    SUCCESS = 0,
-    ERROR_ARGS = 1,
-    ERROR_LUA = 2,
-    ERROR_RUBY = 3,
-}Status;
+#include "docs.h"
+#include "status.h"
 
 int main(int argc, char *argv[]){
     if(argc == 1){
@@ -43,6 +38,10 @@ int main(int argc, char *argv[]){
         goto edit_config;
     }
 
+    else if(strcmp(command, "docs") == 0){
+        goto documentation;
+    }
+
     else{
         goto lua;
     }
@@ -65,7 +64,7 @@ lua:
     else if(stat(filepath, &buffer) != 0){
         fprintf(stderr, "workflow: no %s command\n", command);
 
-        return ERROR_LUA;
+        return ERROR_ARGS;
     }
 
     else{
@@ -121,5 +120,16 @@ help:
 
     else{
         execlp("ruby", "ruby", "/usr/src/workflow/ruby/help.rb", NULL);
+    }
+
+documentation:
+    if(argc != 3){
+        fprintf(stderr, "workflow: 3 arguments must be given when running docs\n");
+
+        return ERROR_ARGS;
+    }
+
+    else{
+        return docs(argv[2]);
     }
 }

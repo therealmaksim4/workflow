@@ -1,5 +1,5 @@
 all:
-	g++ -x c -O3 -march=native -flto -fno-plt src/main.c -o bin/workflow
+	gcc -O3 -march=native -Iinclude src/docs.c src/main.c -o bin/workflow
 	luac -o bin/all.luac lua/all.lua
 	luac -o bin/check_command_name_color.luac lua/check_command_name_color.lua
 	luac -o bin/shortcuts.luac lua/shortcuts.lua
