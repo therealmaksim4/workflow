@@ -2,51 +2,30 @@
 #include <stdio.h>
 #include <string.h>
 #include "status.h"
-
-void readme(){
-    FILE *pFile = fopen("/usr/src/workflow/README.md", "r");
-    char buffer[1024];
-
-    while(fgets(buffer, sizeof(buffer), pFile)){
-        printf("%s", buffer);
-    }
-
-    fclose(pFile);
-}
-
-void commands(){
-    FILE *pFile = fopen("/usr/src/workflow/COMMANDS.md", "r");
-    char buffer[1024];
-
-    while(fgets(buffer, sizeof(buffer), pFile)){
-        printf("%s", buffer);
-    }
-
-    fclose(pFile);
-}
-
-void contributing(){
-    FILE *pFile = fopen("/usr/src/workflow/CONTRIBUTING.md", "r");
-    char buffer[1024];
-
-    while(fgets(buffer, sizeof(buffer), pFile)){
-        printf("%s", buffer);
-    }
-
-    fclose(pFile);
-}
+#include <ctype.h>
+#include <sys/stat.h>
 
 int docs(char *doc){
-    if(strcmp(doc, "commands") == 0){
-        commands();
+    for(int i = 0; doc[i]; i++){
+        doc[i] = toupper(doc[i]);
     }
 
-    else if(strcmp(doc, "readme") == 0){
-        readme();
-    }
+    char filepath[1024] = "";
+    strcat(filepath, "/usr/src/workflow/");
+    strcat(filepath, doc);
+    strcat(filepath, ".md");
 
-    else if(strcmp(doc, "contributing") == 0){
-        contributing();
+    struct stat stat_buffer;
+
+    if(stat(filepath, &stat_buffer) == 0){
+        FILE *pFile = fopen(filepath, "r");
+        char buffer[1024];
+
+        while(fgets(buffer, sizeof(buffer), pFile)){
+            printf("%s", buffer);
+        }
+
+        fclose(pFile);
     }
 
     else{

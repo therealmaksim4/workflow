@@ -2,7 +2,7 @@
 
 If you know enough about one of these languages that's enough to start contributing.
 
-In C you need to know `stdio.h`, a bit of `stdlib.h` and you should know how to make header files in case we need those. In Lua you just need to know for loops, if statements, `io.write()`, `io.read()`, `dofile()` and other related concepts. You don't really need to know ruby as it is not going to be used that much. You should also know how to use a compiler and an interpreter.
+In C you need to know `stdio.h`, a bit of `stdlib.h` and you should know how to make header files in case we need those. In Lua you just need to know for loops, if statements, `io.write()`, `io.read()`, `dofile()` and other related concepts. You should also know how to use a compiler and an interpreter.
 
 # Contributing
 
@@ -46,7 +46,7 @@ Don't write them. Code should read like English. If code doesn't read like Engli
 
 ### Tabs
 
-Tabs should be 4 spaces nothing more nothing less, unless we are in Ruby.
+Tabs should be 4 spaces nothing more nothing less.
 
 ```c
 if(tab.spaces == 4){
@@ -119,22 +119,4 @@ Not in normal output.
 ```lua
 io.write("Hello, World!\n")
 io.write("This is the wrong way\n")
-```
-
-## Ruby
-
-### print
-
-Always use `print` for stdout and nothing else.
-
-```ruby
-print("Hello, World!\n")
-```
-
-### stderr
-
-Use `$stderr.print` for errors in the code.
-
-```ruby
-$stderr.print("Error: i dont have a good error example\n")
 ```

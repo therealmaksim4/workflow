@@ -6,6 +6,9 @@
 #include <sys/stat.h>
 #include "docs.h"
 #include "status.h"
+#include "edit_config.h"
+#include "help.h"
+#include "generate.h"
 
 int main(int argc, char *argv[]){
     if(argc == 1){
@@ -64,7 +67,7 @@ lua:
     else if(stat(filepath, &buffer) != 0){
         fprintf(stderr, "workflow: no %s command\n", command);
 
-        return ERROR_ARGS;
+        return ERROR_LUA;
     }
 
     else{
@@ -72,59 +75,41 @@ lua:
     }
 
 generate:
-    if(system("ruby -v > /dev/null 2>&1") != 0){
-        fprintf(stderr, "workflow: ruby interpreter not installed\n");
-
-        return ERROR_RUBY;
-    }
-
-    else if(argc != 3){
-        fprintf(stderr, "workflow: 3 arguments must be given when running generate.rb\n");
+    if(argc != 3){
+        fprintf(stderr, "workflow: 2 arguments must be given when running generate\n");
 
         return ERROR_ARGS;
     }
 
     else{
-        execlp("ruby", "ruby", "/usr/src/workflow/ruby/generate.rb", argv[2], NULL);
+        return generate(argv[2]);
     }
 
 edit_config:
-    if(system("ruby -v > /dev/null 2>&1") != 0){
-        fprintf(stderr, "workflow: ruby interpreter not installed\n");
-
-        return ERROR_RUBY;
-    }
-
-    else if(argc != 2){
-        fprintf(stderr, "workflow: 3 arguments must be given when running edit_config.rb\n");
+    if(argc != 3){
+        fprintf(stderr, "workflow: 2 arguments must be given when running config\n");
 
         return ERROR_ARGS;
     }
 
     else{
-        execlp("ruby", "ruby", "/usr/src/workflow/ruby/edit_config.rb", argv[2], NULL);
+        return edit_config(argv[2]);
     }
 
 help:
-    if(system("ruby -v > /dev/null 2>&1") != 0){
-        fprintf(stderr, "workflow: ruby interpreter not installed\n");
-
-        return ERROR_RUBY;
-    }
-
-    else if(argc != 2){
+    if(argc != 2){
         fprintf(stderr, "workflow: too much arguments given\n");
 
         return ERROR_ARGS;
     }
 
     else{
-        execlp("ruby", "ruby", "/usr/src/workflow/ruby/help.rb", NULL);
+        return help();
     }
 
 documentation:
     if(argc != 3){
-        fprintf(stderr, "workflow: 3 arguments must be given when running docs\n");
+        fprintf(stderr, "workflow: 2 arguments must be given when running docs\n");
 
         return ERROR_ARGS;
     }
