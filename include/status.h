@@ -2,10 +2,11 @@
 #define STATUS_H
 
 typedef enum{
-    SUCCESS = 0,
-    ERROR_ARGS = 1,
-    ERROR_LUA = 2,
-    ERROR_CONFIG = 3,
+    SUCCESS,
+    ERROR,
+    ERROR_DOCS,
+    ERROR_REMOVE_COMMAND,
+    ERROR_LIST,
 }Status;
 
 #endif

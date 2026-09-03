@@ -7,19 +7,63 @@
 #include "docs.h"
 #include "status.h"
 #include "edit_config.h"
-#include "help.h"
+#include "list.h"
 #include "generate.h"
+#include "remove_command.h"
+
+void usage(){
+    printf("Usage: [-h] [-l] [-g command_name] [-c text_editor] [-d doc] [-R command_name] [-r command_name]\n");
+}
 
 int main(int argc, char *argv[]){
     if(argc == 1){
-        printf("Put your scripts in ~/.config/workflow/lua and the next time you run workflow type \"workflow your_command\"\n");
-        printf("To see all commands type \"workflow help\"\n");
+        usage();
 
         return SUCCESS;
     }
 
+    struct stat buffer;
+    int opt;
+
+    while((opt = getopt(argc, argv, "hlgcdRr:")) != -1){
+        switch(opt){
+            case 'h':
+                usage();
+                
+                return SUCCESS;
+                break;
+
+            case 'l':
+                goto list;
+                break;
+
+            case 'g':
+                goto generate;
+                break;
+
+            case 'c':
+                goto edit_config;
+                break;
+
+            case 'd':
+                goto documentation;
+                break;
+
+            case 'R':
+                goto remove_command;
+                break;
+
+            case 'r':
+                goto lua;
+                break;
+        }
+    }
+
+    return SUCCESS;
+
+lua:
     char command[1024];
-    strcpy(command, argv[1]);
+    strcpy(command, argv[2]);
 
     char filepath[1024] = "";
     strcat(filepath, getenv("HOME"));
@@ -27,47 +71,22 @@ int main(int argc, char *argv[]){
     strcat(filepath, command);
     strcat(filepath, "/main.lua");
 
-    struct stat buffer;
-
-    if(strcmp(command, "help") == 0){
-        goto help;
-    }
-
-    else if(strcmp(command, "generate") == 0){
-        goto generate;
-    }
-
-    else if(strcmp(command, "config") == 0){
-        goto edit_config;
-    }
-
-    else if(strcmp(command, "docs") == 0){
-        goto documentation;
-    }
-
-    else{
-        goto lua;
-    }
-
-    return SUCCESS;
-
-lua:
     if(system("lua -v > /dev/null 2>&1") != 0){
         fprintf(stderr, "workflow: lua interpreter is not installed\n");
 
-        return ERROR_LUA;
+        return ERROR;
     }
 
-    else if(argc != 2){
+    else if(argc != 3){
         fprintf(stderr, "workflow: too much arguments given\n");
 
-        return ERROR_ARGS;
+        return ERROR;
     }
 
     else if(stat(filepath, &buffer) != 0){
         fprintf(stderr, "workflow: no %s command\n", command);
 
-        return ERROR_LUA;
+        return ERROR;
     }
 
     else{
@@ -78,7 +97,7 @@ generate:
     if(argc != 3){
         fprintf(stderr, "workflow: 2 arguments must be given when running generate\n");
 
-        return ERROR_ARGS;
+        return ERROR;
     }
 
     else{
@@ -89,32 +108,43 @@ edit_config:
     if(argc != 3){
         fprintf(stderr, "workflow: 2 arguments must be given when running config\n");
 
-        return ERROR_ARGS;
+        return ERROR;
     }
 
     else{
         return edit_config(argv[2]);
     }
 
-help:
+list:
     if(argc != 2){
         fprintf(stderr, "workflow: too much arguments given\n");
 
-        return ERROR_ARGS;
+        return ERROR;
     }
 
     else{
-        return help();
+        return list();
     }
 
 documentation:
     if(argc != 3){
         fprintf(stderr, "workflow: 2 arguments must be given when running docs\n");
 
-        return ERROR_ARGS;
+        return ERROR;
     }
 
     else{
         return docs(argv[2]);
+    }
+
+remove_command:
+    if(argc != 3){
+        fprintf(stderr, "workflow: 2 arguments must be given when running docs\n");
+
+        return ERROR;
+    }
+
+    else{
+        return remove_command(argv[2]);
     }
 }

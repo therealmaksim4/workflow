@@ -31,6 +31,8 @@ int docs(char *doc){
     else{
         fprintf(stderr, "workflow: %s is not a doc\n", doc);
 
-        return ERROR_ARGS;
+        return ERROR_DOCS;
     }
+
+    return SUCCESS;
 }

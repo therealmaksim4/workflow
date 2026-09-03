@@ -1,6 +1,6 @@
 #ifndef HELP_H
 #define HELP_H
 
-int help();
+int list();
 
 #endif

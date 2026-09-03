@@ -5,21 +5,21 @@ warnings=0
 
 sudo printf ""
 
-read -p "Would you like to automatically install dependencies? (gcc, lua, ruby (ruby might need to be installed manually on some systems)) [y/n] " dependencies
+read -p "Would you like to automatically install dependencies? (gcc, lua) [y/n] " dependencies
 
 if [[ $dependencies == "y" ]]; then
     echo -e "\e[0;34m#\e[0;0m Installing dependencies:"
 
     if command -v apt > /dev/null 2>&1; then
-        sudo apt install gcc lua ruby-full
+        sudo apt install gcc lua
     elif command -v dnf > /dev/null 2>&1; then
         sudo dnf install gcc lua
     elif command -v yum > /dev/null 2>&1; then
-        sudo yum install gcc lua ruby
+        sudo yum install gcc lua
     elif command -v zypper > /dev/null 2>&1; then
         sudo zypper install gcc lua
     elif command -v pacman > /dev/null 2>&1; then
-        sudo pacman -S gcc lua ruby
+        sudo pacman -S gcc lua
     elif command -v apk > /dev/null 2>&1; then
         sudo apk add gcc lua
     elif command -v xbps-install > /dev/null 2>&1; then
