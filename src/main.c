@@ -59,7 +59,7 @@ int main(int argc, char *argv[]){
         }
     }
 
-    return SUCCESS;
+    return ERROR;
 
 lua:
     char command[1024];
