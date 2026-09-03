@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
     struct stat buffer;
     int opt;
 
-    while((opt = getopt(argc, argv, "hlgcdRr:")) != -1){
+    while((opt = getopt(argc, argv, "hlg:c:d:R:r:")) != -1){
         switch(opt){
             case 'h':
                 usage();
@@ -34,23 +34,23 @@ int main(int argc, char *argv[]){
                 break;
 
             case 'l':
-                goto list;
+                return list();
                 break;
 
             case 'g':
-                goto generate;
+                return generate(argv[2]);
                 break;
 
             case 'c':
-                goto edit_config;
+                return edit_config(argv[2]);
                 break;
 
             case 'd':
-                goto documentation;
+                return docs(argv[2]);
                 break;
 
             case 'R':
-                goto remove_command;
+                return remove_command(argv[2]);
                 break;
 
             case 'r':
@@ -77,12 +77,6 @@ lua:
         return ERROR;
     }
 
-    else if(argc != 3){
-        fprintf(stderr, "workflow: too much arguments given\n");
-
-        return ERROR;
-    }
-
     else if(stat(filepath, &buffer) != 0){
         fprintf(stderr, "workflow: no %s command\n", command);
 
@@ -91,60 +85,5 @@ lua:
 
     else{
         execlp("lua", "lua", filepath, NULL);
-    }
-
-generate:
-    if(argc != 3){
-        fprintf(stderr, "workflow: 2 arguments must be given when running generate\n");
-
-        return ERROR;
-    }
-
-    else{
-        return generate(argv[2]);
-    }
-
-edit_config:
-    if(argc != 3){
-        fprintf(stderr, "workflow: 2 arguments must be given when running config\n");
-
-        return ERROR;
-    }
-
-    else{
-        return edit_config(argv[2]);
-    }
-
-list:
-    if(argc != 2){
-        fprintf(stderr, "workflow: too much arguments given\n");
-
-        return ERROR;
-    }
-
-    else{
-        return list();
-    }
-
-documentation:
-    if(argc != 3){
-        fprintf(stderr, "workflow: 2 arguments must be given when running docs\n");
-
-        return ERROR;
-    }
-
-    else{
-        return docs(argv[2]);
-    }
-
-remove_command:
-    if(argc != 3){
-        fprintf(stderr, "workflow: 2 arguments must be given when running docs\n");
-
-        return ERROR;
-    }
-
-    else{
-        return remove_command(argv[2]);
     }
 }
