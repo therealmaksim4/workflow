@@ -1,6 +1,6 @@
 #ifndef GENERATE_H
 #define GENERATE_H
 
-int generate(char *command_name);
+int generate(const char *command_name);
 
 #endif

@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int edit_config(char *text_editor){
+int edit_config(const char *text_editor){
     char command[1024] = "";
     strcat(command, text_editor);
     strcat(command, " ");

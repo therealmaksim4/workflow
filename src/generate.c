@@ -5,7 +5,7 @@
 #include <sys/stat.h>
 #include <stdio.h>
 
-int generate(char *command_name){
+int generate(const char *command_name){
     char filepath[1024] = "";
     strcat(filepath, getenv("HOME"));
     strcat(filepath, "/.config/workflow/lua/");

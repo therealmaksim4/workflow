@@ -7,7 +7,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
-int remove_command(char *command_name){
+int remove_command(const char *command_name){
     char filepath[1024] = "";
     strcat(filepath, getenv("HOME"));
     strcat(filepath, "/.config/workflow/lua/");

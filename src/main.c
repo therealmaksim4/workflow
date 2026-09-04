@@ -10,9 +10,15 @@
 #include "list.h"
 #include "generate.h"
 #include "remove_command.h"
+#include "macros.h"
 
 void usage(){
+    printf("workflow %s\n", VERSION);
     printf("Usage: [-h] [-l] [-g command_name] [-c text_editor] [-d doc] [-R command_name] [-r command_name]\n");
+}
+
+void version(){
+    printf("workflow %s\n", VERSION);
 }
 
 int main(int argc, char *argv[]){
@@ -22,14 +28,26 @@ int main(int argc, char *argv[]){
         return SUCCESS;
     }
 
+    else if(argc > 3){
+        fprintf(stderr, "workflow: too many arguments given\n");
+
+        return ERROR;
+    }
+
     struct stat buffer;
     int opt;
 
-    while((opt = getopt(argc, argv, "hlg:c:d:R:r:")) != -1){
+    while((opt = getopt(argc, argv, "hvlg:c:d:R:r:")) != -1){
         switch(opt){
             case 'h':
                 usage();
                 
+                return SUCCESS;
+                break;
+
+            case 'v':
+                version();
+
                 return SUCCESS;
                 break;
 
